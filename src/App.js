@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="App_todo">
-        <form className="App_input_wrapper">
+        <form className="App_input_wrapper" onSubmit={addTodoHandler}>
           <input ref={todoInputRef} type={"text"} className="App_input" />
           <div className="App_input_button" onClick={addTodoHandler}>
             <TbArrowBarDown size={24} />
