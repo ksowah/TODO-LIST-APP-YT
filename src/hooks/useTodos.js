@@ -1,21 +1,16 @@
 import { useEffect, useState } from "react";
-import { getData, saveData } from "../services";
+import { createTodo, getData, saveData } from "../services";
 
 export function useTodos() {
   const [allTodos, setAllTodos] = useState([]);
 
   const addTodo = (text) => {
-    const todoItem = {
-      id: new Date().getTime(),
-      text,
-      isChecked: false,
-    };
-
-    setAllTodos([todoItem, ...allTodos])
+    const todoItem = createTodo(text);
+    setAllTodos([todoItem, ...allTodos]);
   };
 
   const getAllTodos = () => {
-    let stored = getData('todo')
+    let stored = getData("todo");
 
     if (stored) {
       setAllTodos(stored);
@@ -44,7 +39,7 @@ export function useTodos() {
   }, []);
 
   useEffect(() => {
-    saveData('todo', allTodos)
+    saveData("todo", allTodos);
   }, [allTodos]);
 
   return { allTodos, addTodo, toggleTodos, deleteTodo };

@@ -7,23 +7,19 @@ import { useTodos } from "./hooks";
 const App = () => {
   const { allTodos, addTodo, toggleTodos, deleteTodo } = useTodos();
 
-  const todoInputRef = useRef('')
+  const todoInputRef = useRef("");
 
   const addTodoHandler = (e) => {
     e.preventDefault();
-    addTodo(todoInputRef.current.value)
-    todoInputRef.current.value = ''
-  }
+    addTodo(todoInputRef.current.value);
+    todoInputRef.current.value = "";
+  };
 
   return (
     <div className="App">
       <div className="App_todo">
         <form className="App_input_wrapper">
-          <input
-            ref={todoInputRef}
-            type={"text"}
-            className="App_input"
-          />
+          <input ref={todoInputRef} type={"text"} className="App_input" />
           <div className="App_input_button" onClick={addTodoHandler}>
             <TbArrowBarDown size={24} />
           </div>
