@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getData, saveData } from "../services";
 
 export function useTodos() {
   const [allTodos, setAllTodos] = useState([]);
@@ -14,7 +15,7 @@ export function useTodos() {
   };
 
   const getAllTodos = () => {
-    let stored = JSON.parse(localStorage.getItem("todo"));
+    let stored = getData('todo')
 
     if (stored) {
       setAllTodos(stored);
@@ -43,7 +44,7 @@ export function useTodos() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("todo", JSON.stringify(allTodos));
+    saveData('todo', allTodos)
   }, [allTodos]);
 
   return { allTodos, addTodo, toggleTodos, deleteTodo };
