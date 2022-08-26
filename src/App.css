@@ -12,14 +12,14 @@
   width: 28rem;
 }
 
-.App_input_wrapper{
+.App_input_wrapper {
   display: flex;
   align-items: center;
   width: 100%;
   height: 2.5rem;
-   background-color: #25273c;
-   border-radius: 15px;
-   overflow: hidden;
+  background-color: #25273c;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
 .App_input {
@@ -33,7 +33,7 @@
   color: white;
 }
 
-.App_input_button{
+.App_input_button {
   width: 3rem;
   height: 100%;
   background-color: #4ec032;
@@ -44,14 +44,14 @@
   cursor: pointer;
 }
 
-.App_todo_list{
+.App_todo_list {
   background-color: #25273c;
   height: 100%;
   margin-top: 2rem;
   overflow: auto;
 }
 
-.empty{
+.empty {
   color: white;
   text-align: center;
   margin-top: 6rem;
